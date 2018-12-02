@@ -1,0 +1,36 @@
+#logo {
+    max-width: 500px;
+}
+
+#icon-logo {
+    max-width: 180px;
+}
+
+#nav-title {
+    color: $brand-color;
+    padding: 0 3%;
+    font-size: 2em;
+}
+
+.content {
+    padding: 1% 1%;
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#member {
+    display: flex;
+    max-width: 540px;
+    width: 98%;
+    background-color: lightgray;
+    padding: 1% 1%;
+    margin: 3px;
+//    border: 2px solid $brand-color;
+}
+
+#column {
+    margin: 0% 3%;
+}
+

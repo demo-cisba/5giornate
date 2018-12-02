@@ -1,0 +1,27 @@
+---
+layout: default
+title: 5 Giornate
+---
+
+{% for person in site.data.members %}
+    {% assign jpeg = person.telefono | remove: " " | remove: "+39" | append: ".jpg" %}
+    {% assign jpeg_path = "/img/" |append: jpeg %}
+    {% assign photo = "/img/member.png" %}
+    {% for image in site.static_files %}
+        {% if image.path contains jpeg_path %}
+            {% assign photo = jpeg_path %}
+        {% endif %}
+    {% endfor %}
+
+    <div id="member">
+        <div id="column">
+            <img src="{{ site.baseurl }}{{ photo }}"/>
+        </div>
+        <div id="column">
+            <p><a target="_blank" href="{{ person.profilo_linkedin }}">{{ person.Nome }} {{ person.Cognome }}</a></p>
+            <p>{{ person.Attivita }}</p>
+            <p><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
+            <p><a href="tel:{{ person.telefono }}">{{ person.telefono }}</a></p>
+        </div>
+    </div>
+{% endfor %}

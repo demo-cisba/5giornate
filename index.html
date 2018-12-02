@@ -5,8 +5,8 @@ title: 5 Giornate
 
 {% for person in site.data.members %}
     {% assign jpeg = person.telefono | remove: " " | remove: "+39" | append: ".jpg" %}
-    {% assign jpeg_path = "/img/" |append: jpeg %}
-    {% assign photo = "/img/member.png" %}
+    {% assign jpeg_path = "img/" |append: jpeg %}
+    {% assign photo = "img/member.png" %}
     {% for image in site.static_files %}
         {% if image.path contains jpeg_path %}
             {% assign photo = jpeg_path %}
@@ -15,7 +15,7 @@ title: 5 Giornate
 
     <div id="member">
         <div id="column">
-            <img src="{{ site.baseurl }}{{ photo }}"/>
+            <img src="{{ photo }}"/>
         </div>
         <div id="column">
             <p><a target="_blank" href="{{ person.profilo_linkedin }}">{{ person.Nome }} {{ person.Cognome }}</a></p>

@@ -18,7 +18,12 @@ title: 5 Giornate
             <img id="photo" src="{{ photo }}"/>
         </div>
         <div id="column">
-            <p><a target="_blank" href="{{ person.profilo_linkedin }}">{{ person.Nome }} {{ person.Cognome }}</a></p>
+            {% assign linkedin = person.profilo_linkedin | remove: " " %}
+            {% if linkedin == "" %}
+                <p>{{ person.Nome }} {{ person.Cognome }}</p>
+            {% else %}
+                <p><a target="_blank" href="{{ person.profilo_linkedin }}">{{ person.Nome }} {{ person.Cognome }}</a></p>
+            {% endif %}
             <p>{{ person.Attivita }}</p>
             <p><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
             <p><a href="tel:{{ person.telefono }}">{{ person.telefono }}</a></p>
